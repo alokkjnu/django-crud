@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1px">
+    <th>
+        <td>ID</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+        <td>Mobile No</td>
+    </th>
+    {% for stu in student %}
+    <tr>
+        <td></td>
+        <td>{{stu.id}}</td>
+        <td>{{stu.first_name}}</td>
+        <td>{{stu.last_name}}</td>
+        <td>{{stu.email}}</td>
+        <td>{{stu.mobile_no}}</td>
+        <td><a href="{% url 'student-update' stu.id%}"><button>Update</button></a></td>
+        <td><a href="{% url 'student-delete' stu.id%}"><button>Delete</button></a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>
